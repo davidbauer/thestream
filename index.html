@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Stream</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="style.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/dot-luv/jquery-ui.css" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand explainer" data-title="Just a mockup" data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="This is a mockup page for a stream-based home page for news sites. A lot of functionality is only indicated and not actually implemented." href="#">The Stream</a>
+          
+          <div class="nav-collapse collapse" style="padding-top:3px;">
+            
+            <ul class="nav nav-pills">
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Most relevant <b class="caret"></b></a>
+                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Most popular</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Most recent</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Personalised feed</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">All topics <b class="caret"></b></a>
+                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">World</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Switzerland</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Basel</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sports</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Culture</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technology</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Syria</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Facebook</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">FC Basel</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Browse all topics</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="drop5" role="button" data-toggle="dropdown" href="#">All sources <b class="caret"></b></a>
+                <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">The Stream</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Newswires</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Curated</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Official</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Reader content</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Activities</a></li>
+                </ul>
+              </li>
+            </ul>
+            
+            <form class="form-inline" name="checkboxes">
+              <label class="checkbox" style="margin:10px 0 0 5px;">
+                <input type="checkbox" class="explainer" data-title="Less clutter" data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="Hide activity notifications from the stream (stuff like «X has commented on article Y»)"> <span style="color:#999999;">Hide activities</span>
+              </label>
+              <label class="checkbox" style="margin:10px 0 0 5px;" >
+                <input type="checkbox" class="explainer" data-title="Pay to hide" data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="You can hide ads in the stream. Subscribe to never see them again or pay x to hide them for 24 hours"> <span style="color:#999999;">Hide ads</span>
+              </label>
+            
+            <div class="input-append" style="margin-left:25px;" >
+  <input class="span2" id="appendedInputButton" type="text" data-provide="typeahead" data-items="2" data-source="["an example","best example","c example"]">
+  <button class="btn" type="button">Search</button>
+</div>
+
+            
+            <!--
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            -->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+	      	<div class="span7 stream">
+	      	
+          <div class="filters well">
+           
+           Show news from this time range: <span id="timespan" class="explainer" data-title="Time-based personalisation" data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="The timespan is automatically set so that you are shown the most relevant stories since your last visit. You can adjust it to any timespan you wish or simply view the stream in realtime mode."></span>
+            
+           <div id="slider-range"></div>
+
+          </div> <!-- /filters -->
+          
+          
+          
+        <!-- 
+        <div class="alert alert-info" style="margin-bottom:0;"> 
+         <a class="close" data-dismiss="alert" href="#">&times;</a>
+         Get email notifications for this selection.
+			  <div class="controls" style="display:inline;">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  <input class="span3" id="inputIcon" type="text">
+                </div>
+              </div> 
+        </div>
+        -->
+                      
+     <ol id="feeditems">
+	     
+	   	 <div class="alert alert-success hide" style="margin-bottom:0;">
+  2 new items available. Load now.
+</div>
+			
+			  
+		 <a class="item news hide">
+		     <i class="icon-fullscreen hide"></i>
+		     <h3>Breaking: User reloads stories on click</h3>
+		     <p>Because this stream is so sticky, you will want to leave it open in a tab all day long. Whenever there are new stories, you are prompted to load them. There's also a nice (2) in the browser tab indicating new stories, which of course has just disappeared since you clicked to load the stories. Reload the page and wait for 8 seconds to see it.</p><p class="fullarticle hide">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p><p class="fullarticle hide">Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
+		     <p class="meta">
+		     <span class="timestamp">1 minute ago</span>
+		     </p>
+	     </a>
+	     
+	      <div class="item activity hide">
+		 	
+		 	<i class="icon-user"></i> One new user has checked out how this works.<br />
+		 	 
+		 </div>
+	     
+	     <a class="item news">
+	     	<i class="icon-fullscreen hide"></i>
+		     <h3>No Shit: Journo-Nerd Builds Stream-Mockup</h3>
+		     
+		     <img class="teaserimg" src="img/flow.jpg" width="180px;">
+		     <p>What you see here is a mockup for a stream-based home page of a news site. A lot of functionality is only indicated and not actually implemented. <strong>For more info on the concept, click on this teaser to expand the article.</strong></p>
+		     
+		     <div class="fullarticle hide">
+		    <img src="img/flow.jpg" width="650px;">
+		    <p><small>Photo Credit CC: Toni Blay, Flickr</small></p>
+		     
+	      	<span class="badge badge-success">1</span><h4 style="display:inline; margin-left:5px;">News sites as streams</h4>
+	      	
+	      	<p>In a stream-based home page of a news site, navigation is replaced by filters that can be combined in any way the user wishes. Topic overview pages and search results are also displayed right there the stream. By default, items are ordered by relevance (a multi-factor-metric that relies on editorial judgement, but not exclusively).</p>
+	      	
+	      	<span class="badge badge-success">2</span><h4 style="display:inline; margin-left:5px;">Time-based personalisation</h4>
+	      	<p>One key element is the time slider on top of the stream. It defines the timespan from which stories are displayed in the stream. It is automatically set in a way so that the user sees the most relevant stories since his last visit, but can of course be adjusted to any timespan or simply to "realtime". It solves the problem that all visitors see the same stories, irrespective of when they last checked the news.</p>
+	      	
+	      	<span class="badge badge-success">3</span><h4 style="display:inline; margin-left:5px;">Inline article views</h4>
+	      	<p>When a user decides to read an article, the story is expanded in the stream. There are no separate article pages, but of course, every stream element has its own permalink. If a story is visited via the permalink, it is displayed as an expanded item in a topic-stream, with related articles on top and bottom. To allow for generous article layouts, every stream item (aka article) has a fullscreen mode to display articles in a reading-optimised view.</p>
+	      	
+	      	<span class="badge badge-success">4</span><h4 style="display:inline; margin-left:5px;">Personalised feed</h4>
+	      	<p>Users can manually select topics, sources and authors they are particularly interested in. The personalised feed displays mainly those stories plus the most relevant ones (to burst the filter bubble). Besides the manual selection, machine learning techniques are applied to further refine the personalised feed.</p>
+	      	
+	      	<span class="badge badge-success">5</span><h4 style="display:inline; margin-left:5px;">Flexible output</h4>
+	      	<p>Once you have your stream running in the backend, you can deliver it in the frontend whichever way you like, defaulting it to what best fits your audience. You can also offer the whole stream via an API on a freemium model to encourage others to use your stream.</p>
+	      	
+	      	<span class="badge badge-success">6</span><h4 style="display:inline; margin-left:5px;">Optimised for mobile</h4>
+	      	<p>Since the stream is in a one-column layout, it can be easily adjusted for all kinds of screen sizes.</p>		     
+	      	    	
+	      	</div>
+	      	
+		     <p class="meta">
+		     <span class="timestamp">10 minutes ago, relevance: 0.78</span>
+		     </p>
+	     </a>
+	     
+	     <div class="item activity">
+		 	
+		 	<i class="icon-comment"></i> David Bauer commented on <a href="#">The Zoomable Article</a><br />
+		 	<i class="icon-comment"></i> David Bauer commented on <a href="#">Streams are made for flowing</a><br />
+		 	<i class="icon-user"></i> <a href="#">Robert Scoble</a> has joined the community (because who else would be first)<br />
+		 	 
+		 </div>
+	     
+	     <a class="item curated">
+		    <i class="icon-fullscreen hide"></i>
+		    <p>It's a curators world. We don't shy away from linking to others right from our front page. Let's add some info about why we're sharing this: 			Useful and important to know: a collection of facts and background on military drones and what they do.</p>
+		    <div class="teaser">
+		    <img src="img/drone.jpg" width="180px;">
+		    <h3>Everything You Ever Wanted to Know About Drones</h3>
+		    <span>Here we pull in some teaser text via Embed.ly or so to make the teaser more appealing.</span>
+			</div>
+			<p class="meta">
+		     <span class="timestamp">34 minutes ago</span>
+		     </p>
+	     </a>
+	     
+	     <a href="http://www.weeklyfilet.com" class="item ad">
+	     	ADVERTISEMENT
+		    <img src="img/ad.jpg">
+		 </a>
+		 
+		 <a class="item slideshow">
+		     <i class="icon-fullscreen hide"></i>
+		     <h3>Slideshow</h3>
+		    
+		     <p>Too lazy to implement a slideshow, but of course, why only display a teaser image when you can show the slideshow instead.</p> 		    
+		    
+		     <p class="meta">
+		     <span class="timestamp">1 hour and 13 minutes ago</span>
+		     </p>
+		 </a>
+		 
+		 <a class="item video">
+		     <i class="icon-fullscreen hide"></i>
+		     <h3>Embed a video right in the stream when it's really the video that all is about</h3>
+		     
+		     <iframe width="640" height="360" src="http://www.youtube.com/embed/9bQ6XAZi7hs" frameborder="0" allowfullscreen></iframe>
+		     <p class="meta">
+		     <span class="timestamp">1 hour and 13 minutes ago</span>
+		     </p>
+		 </a>
+		 
+		 <a class="item map">
+		     <i class="icon-fullscreen hide"></i>
+		     <h3>Maps to make you mappy</h3>
+		     <p>Normal page layouts usually force you to use a teaser image irrespective of what the main visual of your article is. Not here. Your article is about a map – show the map in the teaser.</p>
+		     <iframe src="http://davidbauer.cartodb.com/tables/cafekarte/embed_map?title=false&amp;description=false&amp;search=false&amp;shareable=false&amp;cartodb_logo=true&amp;sql=&amp;sw_lat=47.49679221520181&amp;sw_lon=7.4494171142578125&amp;ne_lat=47.60107032220255&amp;ne_lon=7.779006958007812" width="100%" height="500" frameborder="0"></iframe>
+		     <p class="fullarticle hide">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p><p class="fullarticle hide">Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
+		     <p class="meta">
+		     <span class="timestamp">1 hour and 2 minutes ago</span>
+		     </p>
+		 </a>
+		 
+	 
+	 <div class="item alert" style="margin-bottom:0;padding-right:6px;">
+  <i class="icon-refresh"></i> Load more stories (doesn't work in the mockup, but you get the picture)
+  	</div>    
+
+	     
+     </ol> <!-- feeditems -->
+     	      	
+	 </div> <!-- stream -->
+	 
+	      	<div class="span4 hidden-tablet">
+	      	
+	      	<span class="badge badge-success">1</span><h4 style="display:inline; margin-left:5px;">News sites as streams</h4>
+	      	
+	      	<p>What you see here is a mockup for a stream-based home page of a news site by <a href="http://www.twitter.com/davidbauer">@davidbauer</a>. Navigation is replaced by filters that can be combined in any way the user wishes. Topic overview pages and search results are also displayed right there the stream. By default, items are ordered by relevance (a multi-factor-metric that relies on editorial judgement, but not exclusively).</p>
+	      	
+	      	<span class="badge badge-success">2</span><h4 style="display:inline; margin-left:5px;">Time-based personalisation</h4>
+	      	<p>One key element is the time slider on top of the stream. It defines the timespan from which stories are displayed in the stream. It is automatically set in a way so that the user sees the most relevant stories since his last visit, but can of course be adjusted to any timespan or simply to "realtime". It solves the problem that all visitors see the same stories, irrespective of when they last checked the news.</p>
+	      	
+	      	<span class="badge badge-success">3</span><h4 style="display:inline; margin-left:5px;">Inline article views</h4>
+	      	<p>When a user decides to read an article, the story is expanded in the stream. There are no separate article pages, but of course, every stream element has its own permalink. If a story is visited via the permalink, it is displayed as an expanded item in a topic-stream, with related articles on top and bottom. To allow for generous article layouts, every stream item (aka article) has a fullscreen mode to display articles in a reading-optimised view.</p>
+	      	
+	      	<span class="badge badge-success">4</span><h4 style="display:inline; margin-left:5px;">Personalised feed</h4>
+	      	<p>Users can manually select topics, sources and authors they are particularly interested in. The personalised feed displays mainly those stories plus the most relevant ones (to burst the filter bubble). Besides the manual selection, machine learning techniques are applied to further refine the personalised feed.</p>
+	      	
+	      	<span class="badge badge-success">5</span><h4 style="display:inline; margin-left:5px;">Flexible output</h4>
+	      	<p>Once you have your stream running in the backend, you can deliver it in the frontend whichever way you like, defaulting it to what best fits your audience. You can also offer the whole stream via an API on a freemium model to encourage others to use your stream.</p>
+	      	
+	      	<span class="badge badge-success">6</span><h4 style="display:inline; margin-left:5px;">Optimised for mobile</h4>
+	      	<p>Since the stream is in a one-column layout, it can be easily adjusted for all kinds of screen sizes.</p>
+	      	
+	      	<span class="badge badge-warning">7</span><h4 style="display:inline; margin-left:5px;">Let's discuss these ideas</h4>
+	      	<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'davidbauerlabs'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	      	
+	      	</div>
+	      	</div>
+	    
+    </div> <!-- /container -->
+    
+    <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit" style="margin-top:10px;">Built by <a href="http://www.davidbauer.ch">David Bauer</a>, powered by <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and a lot of ugly inline styling.</p> <a href="https://twitter.com/davidbauer" class="twitter-follow-button" data-show-count="true" data-size="small">Follow @davidbauer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+   
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>  
+    <script src="custom.js"></script>
+    
+  </body>
+</html>
